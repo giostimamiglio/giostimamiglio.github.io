@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | PhD Student</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts will go here later -->
+</head>
+<body>
+
+    <!-- ================= HEADER / FIXED UI ================= -->
+    <header id="main-header">
+
+        <!-- Top-left: menu button -->
+        <button id="menu-toggle" aria-label="Open menu">
+            <!-- Custom icon later -->
+            ☰
+        </button>
+
+        <!-- Top-right: dark/light toggle -->
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            🌙
+        </button>
+
+    </header>
+
+    <!-- ================= SIDE NAV / TIMELINE ================= -->
+    <nav id="side-timeline">
+        <div class="timeline-line"></div>
+
+        <!-- Rocket that moves with scroll -->
+        <div id="timeline-rocket">🚀</div>
+
+        <!-- Section markers -->
+        <ul>
+            <li data-target="hero"></li>
+            <li data-target="about"></li>
+            <li data-target="cv"></li>
+            <li data-target="publications"></li>
+            <li data-target="contact"></li>
+            <li data-target="more"></li>
+        </ul>
+    </nav>
+
+    <!-- ================= HERO / LANDING ================= -->
+    <section id="hero" class="full-screen">
+
+        <div class="hero-content">
+
+            <!-- Name + one-line presentation -->
+            <div class="hero-text">
+                <h1>Your Name</h1>
+                <p>
+                    PhD student at
+                    <a href="https://www.randominstitute.edu" target="_blank">
+                        Random Institute
+                    </a>,
+                    working on cool science ✨
+                </p>
+            </div>
+
+            <!-- Fan of images -->
+            <div class="hero-images">
+                <img src="assets/images/img1.jpg" alt="Image 1">
+                <img src="assets/images/img2.jpg" alt="Image 2">
+                <img src="assets/images/img3.jpg" alt="Image 3">
+            </div>
+
+        </div>
+
+        <!-- Scroll cue -->
+        <div id="scroll-indicator">
+            🚀
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT / EXTENDED PRESENTATION ================= -->
+    <section id="about">
+
+        <div class="section-content">
+
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Longer presentation goes here. You’ll talk about your PhD,
+                    interests, and research direction.
+                </p>
+            </div>
+
+            <div class="about-photo">
+                <img src="assets/images/portrait.jpg" alt="Portrait">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CV ================= -->
+    <section id="cv">
+
+        <div class="section-content">
+
+            <h2>Curriculum Vitae</h2>
+
+            <p>
+                One-look summary of your academic path.
+            </p>
+
+            <a href="assets/pdfs/cv.pdf" class="cv-download" target="_blank">
+                Download CV (PDF)
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PUBLICATIONS ================= -->
+    <section id="publications">
+
+        <div class="section-content">
+
+            <h2>Publications</h2>
+
+            <!-- Work in progress fun block -->
+            <div class="wip-container">
+
+                <div class="wip-visuals">
+                    <!-- Animated later -->
+                    <span class="excavator">🚜</span>
+                    <span class="alien">👽⛑️</span>
+                </div>
+
+                <p class="wip-text">
+                    Work in progress!
+                    <br>
+                    In the meantime, take a look at my posters presented at
+                    <strong>Conference XXX</strong>.
+                </p>
+
+            </div>
+
+            <!-- Posters -->
+            <div class="poster-gallery">
+
+                <a href="assets/pdfs/poster1.pdf" target="_blank">
+                    <img src="assets/images/poster1.jpg" alt="Poster 1">
+                </a>
+
+                <a href="assets/pdfs/poster2.pdf" target="_blank">
+                    <img src="assets/images/poster2.jpg" alt="Poster 2">
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+
+        <div class="section-content">
+
+            <h2>Contact</h2>
+
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:you@email.com">you@email.com</a></li>
+                <li>GitHub: <a href="#">github.com/yourname</a></li>
+                <li>LinkedIn: <a href="#">linkedin.com/in/yourname</a></li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MORE ABOUT ME ================= -->
+    <section id="more">
+
+        <div class="section-content">
+
+            <h2>More About Me</h2>
+
+            <p>
+                Personal interests, hobbies, life outside research.
+            </p>
+
+            <div class="gallery">
+                <img src="assets/images/more1.jpg" alt="">
+                <img src="assets/images/more2.jpg" alt="">
+                <img src="assets/images/more3.jpg" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

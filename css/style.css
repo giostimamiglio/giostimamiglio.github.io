@@ -1,0 +1,143 @@
+/* ================== VARIABLES ================== */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #111;
+    --accent-color: #0066cc;
+    --hero-font: 'Segoe UI', Tahoma, sans-serif;
+}
+
+[data-theme="dark"] {
+    --bg-color: #111;
+    --text-color: #f9f9f9;
+    --accent-color: #66ccff;
+}
+
+/* ================== GLOBAL ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--hero-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================== HEADER ================== */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.05);
+}
+
+#main-header button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ================== HERO / LANDING ================== */
+.full-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    padding: 0 50px;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroFadeIn 1.5s forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes heroFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+}
+
+.hero-images {
+    display: flex;
+    gap: -40px;
+}
+
+.hero-images img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: rotate(-10deg);
+    transition: transform 0.5s, z-index 0.5s;
+    cursor: pointer;
+}
+
+.hero-images img:nth-child(2) {
+    transform: rotate(0deg);
+}
+
+.hero-images img:nth-child(3) {
+    transform: rotate(10deg);
+}
+
+.hero-images img:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 10;
+}
+
+/* ================== SCROLL INDICATOR ================== */
+#scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -15px); }
+}
