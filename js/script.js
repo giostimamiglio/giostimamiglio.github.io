@@ -1,16 +1,23 @@
-// ================= DARK/LIGHT MODE =================
-const toggle = document.getElementById('theme-toggle');
-toggle.addEventListener('click', () => {
-    if(document.documentElement.getAttribute('data-theme') === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
+// ================= THEME TOGGLE =================
+const toggle = document.getElementById("theme-toggle");
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// ================= SCROLL CUE =================
-const scrollIndicator = document.getElementById('scroll-indicator');
-scrollIndicator.addEventListener('click', () => {
-    const nextSection = document.getElementById('about');
-    nextSection.scrollIntoView({ behavior: 'smooth' });
-});
+// ================= SECTION FADE-IN =================
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    },
+    { threshold: 0.5 }
+);
+
+sections.forEach(section => observer.observe(section));
