@@ -1217,24 +1217,45 @@ body.dark #contacts {
     }
 
     .hero-images {
-        position: static !important;  /* remove any absolute offsets */
+        position: relative !important;   /* remove desktop absolute offsets */
         display: flex;
-        flex-direction: column !important;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
         width: 100%;
+        max-width: 280px;               /* optional max width for images */
+        margin: 0 auto;                 /* center images */
         height: auto;
+        top: 0;
+        left: 0;
     }
 
     .hero-img-card {
-        position: relative;
+        position: relative !important;  /* remove absolute from desktop */
         width: 100%;
         max-width: 280px;
         margin: 0 auto;
     }
 
+    .hero-img-card img {
+        width: 100%;                    /* fill card */
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
     .hero-rocket {
         display: none; /* hide rocket on mobile */
+    }
+
+    /* constrain hero menu inside screen */
+    .menu-hero {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 280px;  /* match hero images */
+        margin: 0 auto;
     }
 
     /* ---------- ABOUT / CV / MORE ---------- */
@@ -1243,7 +1264,7 @@ body.dark #contacts {
     #publications,
     #contacts,
     #more {
-        padding-left: 1.5rem;  /* no timeline offset on mobile */
+        padding-left: 1.5rem;  /* remove timeline offset on mobile */
         padding-right: 1.5rem;
         width: 100%;
     }
