@@ -1100,8 +1100,10 @@ body.dark #contacts {
 }
 
 .dual-images img {
+    display: block;
     width: 100%;
     max-width: 220px;
+    height: auto;
 }
 
 /* ================= CAROUSEL ================= */
@@ -1184,107 +1186,113 @@ body.dark #contacts {
     transform: translateY(-50%) scale(1.1);
 }
 
+/* ================= MOBILE STABILITY & RESPONSIVENESS FIXES ================= */
 @media (max-width: 900px) {
 
-    /* ---------------- SECTIONS ---------------- */
+    /* ---- Disable opacity reveal (mobile browsers repaint badly) ---- */
     section {
-        height: auto;
-        min-height: 100vh;
-        padding: 4rem 1.5rem;
+        opacity: 1 !important;
+        transition: none !important;
+        height: auto !important;
+        min-height: unset !important;
     }
 
-    /* ---------------- TIMELINE ---------------- */
-    #timeline {
-        display: none;
+    section.active {
+        opacity: 1 !important;
     }
 
-    /* Remove left offset reserved for timeline */
+    /* ---- Remove fixed elements that cause layout thrashing ---- */
+    #timeline,
+    #rocket {
+        display: none !important;
+    }
+
+    /* ---- General layout padding fixes ---- */
     #about,
     #cv,
     #publications,
+    #contacts,
     #more {
-        padding-left: 1.5rem !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
     }
 
-    /* ---------------- HERO ---------------- */
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-text {
-        transform: none;
-    }
-
-    .hero-text h1 {
-        font-size: 2.6rem;
-    }
-
-    .hero-text p {
-        font-size: 1.1rem;
-        margin: 0 auto;
-    }
-
-    .hero-images {
-        display: none; /* optional: hide floating images on mobile */
-    }
-
-    /* ---------------- ABOUT ---------------- */
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .about-text {
-        text-align: left;
-        font-size: 1rem;
-    }
-
-    /* ---------------- PUBLICATIONS ---------------- */
-    .pub-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pub-left {
-        transform: none;
-        justify-self: center;
-    }
-
-    /* ---------------- CV ---------------- */
-    .cv-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cv-year {
-        text-align: left;
-        font-weight: 600;
-    }
-
-    /* ---------------- MORE SECTION ---------------- */
+    /* ---- Stack grids & columns vertically ---- */
+    .about-grid,
+    .pub-grid,
+    .cv-container,
     .more-row {
+        grid-template-columns: 1fr !important;
         flex-direction: column !important;
         gap: 1.5rem;
     }
 
-    .more-text h3 {
-        font-size: 1.6rem;
+    /* ---- Center images & media ---- */
+    .about-image img,
+    .pub-left img,
+    .cv-right img,
+    .more-image img {
+        margin: 0 auto;
+        max-width: 90vw;
+        height: auto;
     }
 
-    .more-text p {
-        font-size: 1rem;
+    /* ---- CV layout cleanup ---- */
+    .cv-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
     }
 
-    /* ---------------- MENU ---------------- */
-    .menu-hero {
-        gap: 0.6rem;
-        flex-wrap: wrap;
+    .cv-year {
+        text-align: left;
+        font-size: 0.95rem;
+        opacity: 0.85;
+    }
+
+    /* ---- Buttons stay readable and compact ---- */
+    .cv-button,
+    .cv-download-btn {
+        width: auto;
+        align-self: flex-start;
+    }
+
+    /* ---- Carousel stability on mobile ---- */
+    .carousel {
         justify-content: center;
     }
 
-    .menu-hero a {
-        font-size: 0.85rem;
-        padding: 0.35rem 0.6rem;
+    .carousel-viewport {
+        max-width: 90vw;
+    }
+
+    .carousel-track {
+        will-change: transform;
+    }
+
+    .carousel-slide img {
+        max-width: 90vw;
+        height: auto;
+    }
+
+    /* ---- Carousel arrows always visible & closer to image ---- */
+    .carousel-arrow {
+        opacity: 0.85;
+    }
+
+    /* ---- Reduce large hero text ---- */
+    .hero-text h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    /* ---- Disable hero image hover effects on touch devices ---- */
+    .hero-img-card:hover img,
+    .hero-img-card:hover .hero-img-overlay {
+        transform: none;
+        filter: none;
     }
 }
