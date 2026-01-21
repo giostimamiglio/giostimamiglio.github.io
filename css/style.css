@@ -1183,3 +1183,108 @@ body.dark #contacts {
     opacity: 1;
     transform: translateY(-50%) scale(1.1);
 }
+
+@media (max-width: 900px) {
+
+    /* ---------------- SECTIONS ---------------- */
+    section {
+        height: auto;
+        min-height: 100vh;
+        padding: 4rem 1.5rem;
+    }
+
+    /* ---------------- TIMELINE ---------------- */
+    #timeline {
+        display: none;
+    }
+
+    /* Remove left offset reserved for timeline */
+    #about,
+    #cv,
+    #publications,
+    #more {
+        padding-left: 1.5rem !important;
+    }
+
+    /* ---------------- HERO ---------------- */
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        transform: none;
+    }
+
+    .hero-text h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        margin: 0 auto;
+    }
+
+    .hero-images {
+        display: none; /* optional: hide floating images on mobile */
+    }
+
+    /* ---------------- ABOUT ---------------- */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-text {
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    /* ---------------- PUBLICATIONS ---------------- */
+    .pub-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pub-left {
+        transform: none;
+        justify-self: center;
+    }
+
+    /* ---------------- CV ---------------- */
+    .cv-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cv-year {
+        text-align: left;
+        font-weight: 600;
+    }
+
+    /* ---------------- MORE SECTION ---------------- */
+    .more-row {
+        flex-direction: column !important;
+        gap: 1.5rem;
+    }
+
+    .more-text h3 {
+        font-size: 1.6rem;
+    }
+
+    .more-text p {
+        font-size: 1rem;
+    }
+
+    /* ---------------- MENU ---------------- */
+    .menu-hero {
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu-hero a {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.6rem;
+    }
+}
