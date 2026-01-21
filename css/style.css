@@ -1189,150 +1189,92 @@ body.dark #contacts {
 /* ================= MOBILE FIXES (≤900px) ================= */
 @media (max-width: 900px) {
 
-    /* ---------- GENERAL ---------- */
-    body, section {
-        height: auto;           /* allow content to define section height */
-        padding: 2rem 1rem;
+    /* ---------- GLOBAL SECTION FIX ---------- */
+    section {
+        height: auto !important;        /* allow content to grow */
+        min-height: unset !important;
+        padding: 2rem 1rem !important;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
     }
 
-    section {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+    /* Remove timeline offset everywhere */
+    #about,
+    #cv,
+    #publications,
+    #contacts,
+    #more {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Hide timeline entirely */
+    #timeline {
+        display: none !important;
     }
 
     /* ---------- HERO ---------- */
     .hero-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        grid-template-columns: unset;
-        padding: 1.5rem;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+        min-height: unset;
     }
 
     .hero-text {
-        transform: none;
+        transform: none !important;
         text-align: center;
-        margin-bottom: 1.5rem;
+        max-width: 100%;
     }
 
-    .hero-images {
-        position: relative !important;   /* remove desktop absolute offsets */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .hero-text h1 {
+        font-size: 2.6rem;
+    }
+
+    /* Hero menu: move BELOW title, no overlap */
+    .menu-hero {
+        position: static !important;
+        margin-top: 1rem;
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 0.6rem;
+    }
+
+    /* HERO IMAGES: force clean vertical stack */
+    .hero-images {
+        position: static !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
         gap: 1rem;
         width: 100%;
-        max-width: 280px;               /* optional max width for images */
-        margin: 0 auto;                 /* center images */
-        height: auto;
-        top: 0;
-        left: 0;
+        height: auto !important;
+        overflow: visible !important;
     }
 
     .hero-img-card {
-        position: relative !important;  /* remove absolute from desktop */
+        position: relative !important;
+        inset: unset !important;
+        transform: none !important;
         width: 100%;
         max-width: 280px;
         margin: 0 auto;
     }
 
     .hero-img-card img {
-        width: 100%;                    /* fill card */
+        max-width: 100%;
         height: auto;
-        display: block;
-        border-radius: 12px;
     }
 
+    /* Remove hero rocket on mobile */
     .hero-rocket {
-        display: none; /* hide rocket on mobile */
+        display: none !important;
     }
 
-    /* constrain hero menu inside screen */
-    .menu-hero {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-        max-width: 280px;  /* match hero images */
-        margin: 0 auto;
-    }
-
-    /* ---------- ABOUT / CV / MORE ---------- */
-    #about,
-    #cv,
-    #publications,
-    #contacts,
-    #more {
-        padding-left: 1.5rem;  /* remove timeline offset on mobile */
-        padding-right: 1.5rem;
-        width: 100%;
-    }
-
-    /* ---------- CV ---------- */
-    .cv-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cv-left, .cv-right {
-        width: 100%;
-    }
-
-    .cv-left {
-        margin-bottom: 2rem;
-    }
-
-    .cv-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .cv-year {
-        text-align: left;
-        margin-bottom: 0.2rem;
-    }
-
-    /* ---------- MORE ---------- */
-    .more-container {
-        padding: 2rem 1rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    /* Stack dual images vertically */
-    .more-row .dual-images {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .dual-images img {
-        width: 100%;
-        max-width: 260px;
-    }
-
-    /* Center carousel inside its container */
-    .more-row .carousel {
-        justify-content: center;
-        width: 100%;
-    }
-
-    /* Make each row stack completely */
-    .more-row.row1 .more-image,
-    .more-row.row2 .more-image,
-    .more-row.row3 .more-image,
-    .more-row.row1 .more-text,
-    .more-row.row2 .more-text,
-    .more-row.row3 .more-text {
-        flex: 1 1 100%;
-        margin-top: 0.75rem;
-    }
-
-    /* ---------- ABOUT ME ---------- */
+    /* ---------- ABOUT ---------- */
     .about-container {
         padding: 2rem 1rem;
     }
@@ -1347,35 +1289,84 @@ body.dark #contacts {
     }
 
     .about-image img {
-        max-width: 280px;
+        max-width: 260px;
         margin: 0 auto;
     }
 
-    /* ---------- PUBLICATIONS ---------- */
-    .pub-container {
-        padding: 2rem 1rem;
+    /* ---------- CV ---------- */
+    .cv-container {
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    .pub-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .cv-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
     }
 
-    .pub-left {
-        transform: none;
-        justify-self: center;
+    .cv-year {
+        text-align: left;
     }
 
     /* ---------- CONTACTS ---------- */
     .contact-item {
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: wrap;      /* ensure links stay within bounds */
-        gap: 0.5rem;          /* spacing between icon + link */
+        flex-wrap: wrap;
+        gap: 0.6rem;
     }
 
-    #timeline {
-        display: none;
+    .contact-item a {
+        word-break: break-word;
+    }
+
+    /* ---------- MORE SECTION ---------- */
+    #more {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .more-container {
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .more-row {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .more-text {
+        width: 100%;
+        margin-top: 1rem;
+        text-align: left;
+    }
+
+    .more-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Dual images: STACK on mobile */
+    .dual-images {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .dual-images img {
+        max-width: 260px;
+        width: 100%;
+    }
+
+    /* Carousel: keep centered */
+    .carousel {
+        justify-content: center;
+    }
+
+    .carousel-viewport {
+        max-width: 280px;
     }
 
 }
