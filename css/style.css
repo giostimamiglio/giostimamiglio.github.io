@@ -1384,6 +1384,17 @@ body.dark #contacts {
         flex-direction: column !important;
         gap: 1.5rem;
     }
+    /* ---------- PUBLICATIONS: CENTER CONTAINER ---------- */
+    #publications {
+        align-items: center !important;
+    }
+
+    .pub-container {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
 
     .pub-left,
     .pub-right {
