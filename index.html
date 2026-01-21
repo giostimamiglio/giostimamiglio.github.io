@@ -7,106 +7,408 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+
 </head>
 <body>
+    <!-- SIDE TIMELINE -->
+    <div id="timeline">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-dot" data-section="hero" data-label="Home"></div>
+        <div class="timeline-dot" data-section="about" data-label="About Me"></div>
+        <div class="timeline-dot" data-section="cv" data-label="CV"></div>
+        <div class="timeline-dot" data-section="publications" data-label="Publications"></div>
+        <div class="timeline-dot" data-section="contacts" data-label="Contacts"></div>
+        <div class="timeline-dot" data-section="more" data-label="More"></div>
+
+        <div id="rocket">
+            <img src="images/rocket.svg" class="rocket-icon" alt="Rocket" />
+        </div>
+
+    </div>
+
 
     <!-- TOP BAR -->
     <header class="top-bar">
-        <div class="menu-icon">☰</div>
-        <button id="theme-toggle">🌙</button>
+       <!-- <div class="menu-icon">☰</div> -->
+        <nav class="menu-hero">
+            <a href="#hero" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#cv">CV</a>
+            <a href="#publications">Publications</a>
+            <a href="#contacts">Contacts</a>
+            <a href="#more">More</a>
+        </nav>
+
+
+
+        <!-- Place this inside the top-bar in the hero -->
+        <label id="theme-toggle" class="theme-switch">
+            <input type="checkbox" id="theme-checkbox">
+            <span class="slider">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </span>
+        </label>
+
+
     </header>
+
 
     <!-- LANDING / HERO -->
     <section id="hero" class="active">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Your Name</h1>
+                <h1>Giovanni </h1>
+                <h1>Stimamiglio</h1>
                 <p>
                     PhD student at
-                    <a href="https://www.example.com" target="_blank">
-                        Random Institute
-                    </a>,
-                    working on fascinating physics.
+                    <a href="https://www.mpa-garching.mpg.de/" target="_blank">
+                        Max Planck Institute for Astrophysics
+                    </a>
                 </p>
             </div>
 
             <div class="hero-images">
-                <img src="images/pic1.jpg" alt="image 1">
-                <img src="images/pic2.jpg" alt="image 2">
-                <img src="images/pic3.jpg" alt="image 3">
+
+                <!-- Image 1 -->
+                <a href="#cv" class="hero-img-card" style="--size: 450px">
+                    <img src="images/Hero_B_white.webp" alt="Academic Path" 
+                        class="hero-img-dark-swap"
+                        data-light="images/Hero_B_white.webp"
+                        data-dark="images/Hero_B_black.webp">
+                    <div class="hero-img-overlay">
+                        <h4> Magnetic fields of binary-stripped stars </h4>
+                        <p>Click to discover more about my master thesis work!</p>
+                    </div>
+                </a>
+
+
+
+                <!-- Image 2 -->
+                <a href="#publications" class="hero-img-card" style="--size: 250px">
+                    <img src="images/Hero_merger.png" alt="Research portrait">
+                    <div class="hero-img-overlay">
+                        <h4>Current Research</h4>
+                        <p>In my PhD, I am working on 3D MHD simulations of ultra-heavy white dwarf mergers. Click to discover more! </p>
+                    </div>
+                </a>
+
+                <!-- Image 3 -->
+                <a href="#cv" class="hero-img-card" style="--size: 200px">
+                    <img src="images/Bachelor_graphs.png" alt="Work in progress">
+                    <div class="hero-img-overlay">
+                        <h4>Bachelor Thesis</h4>
+                        <p>Mode conversion and vacuum resonance in magnetars' atmospheres. Click to discover more!</p>
+                    </div>
+                </a>
+
             </div>
+
         </div>
 
         <!-- Scroll / Rocket placeholder -->
         <div class="scroll-indicator">
-            🚀
+            <img src="images/rocket.svg" class="hero-rocket" alt="Rocket" />
         </div>
     </section>
+
 
     <!-- ABOUT -->
     <section id="about">
-        <div class="section-content">
+        <div class="about-container">
             <h2>About Me</h2>
-            <p>
-                Here goes a longer presentation of who you are,
-                your background, and your research interests.
-            </p>
-        </div>
-    </section>
 
-    <!-- CV -->
-    <section id="cv">
-        <div class="section-content">
-            <h2>Curriculum Vitae</h2>
-            <p>
-                One-look explanation of your academic path.
-            </p>
-            <a class="button" href="files/cv.pdf" target="_blank">
-                Download CV (PDF)
-            </a>
-        </div>
-    </section>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Hello there! I am Giovanni, and I am a PhD student at the <a href="https://www.mpa-garching.mpg.de/" target="_blank">
+                        Max Planck Institute for Astrophysics</a> in Garching bei München, Germany, working with 
+                        <a href="https://www.mpa-garching.mpg.de/person/94899" target="_blank">Rüdiger Pakmor</a>, 
+                        <a href="https://www.mpa-garching.mpg.de/person/94899" target="_blank">Stephen Justham</a> and
+                        <a href="https://www.mpa-garching.mpg.de/person/109764" target="_blank">Selma de Mink</a>.
+                    </p>
+                    <p>
+                        My research interests lie in stellar astrophysics, with a particular focus on massive stars, binary systems and 
+                        stellar magnetic fields.
+                    </p>
+                    <p>
+                       My current research focuses on the merger of two ultra-massive white dwarfs, which I am studying using the 3D 
+                       magneto-hydrodynamics code AREPO, with particular interest in investigating the structure and magnetic evolution of the merger remnant.  
+                    </p>
+                    <p>
+                       In my Master's thesis, I explored the origin of internal magnetic fields in massive stars stripped of their outer 
+                       envelope by their binary companion using the 1D stellar evolution code
+                        <a href="https://docs.mesastar.org/en/latest/index.html" target="_blank">MESA</a>. 
+                    </p>
+                </div>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications">
-        <div class="section-content">
-            <h2>Publications</h2>
-            <p class="wip">
-                🚧 Work in progress 🚧
-            </p>
-            <p>
-                In the meantime, check out my posters:
-            </p>
-
-            <div class="posters">
-                <a href="files/poster1.pdf" target="_blank">
-                    <img src="images/poster1.jpg" alt="Poster 1">
-                </a>
-                <a href="files/poster2.pdf" target="_blank">
-                    <img src="images/poster2.jpg" alt="Poster 2">
-                </a>
+                <div class="about-image">
+                    <img src="images/potrait.png">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT --->
-    <section id="contact">
-        <div class="section-content">
-            <h2>Contact</h2>
-            <p>Email: your.email@example.com</p>
-            <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
+
+   <!-- CV SECTION -->
+    <section id="cv">
+        <div class="cv-container">
+
+            <h2>Curriculum Vitae</h2>
+
+            <div class="cv-left">
+                <!-- PhD -->
+                <div class="cv-item phd">
+                    <div class="cv-info">
+                        <div class="cv-title">PhD student</div>
+                        <div class="cv-institute">Max Planck Institute for Astrophysics, Munich</div>
+                        <div class="cv-topic">Topic: 3D MHD simulations of ONeMg WD mergers</div>
+                    </div>
+                    <div class="cv-year">Oct. 2025 - present</div>
+                </div>
+
+                <div class="cv-separator"></div>
+
+                <!-- Master -->
+                <div class="cv-item master">
+                    <div class="cv-info">
+                        <div class="cv-title">Master in Astrophysics</div>
+                        <div class="cv-institute">Ludwig-Maximilians-Universität, Munich</div>
+                        <div class="cv-topic">Thesis Topic: Theoretical Predictions for the Surface Magnetic Fields of Binary-stripped Massive Stars</div>
+                        <a class="cv-button" href="files/Stimamiglio_Master_Thesis.pdf" target="_blank">Download Master Thesis</a>
+                    </div>
+                    <div class="cv-year">Oct. 2023 - Jul. 2025</div>
+                </div>
+
+                <div class="cv-separator"></div>
+
+                <!-- Bachelor -->
+                <div class="cv-item bachelor">
+                    <div class="cv-info">
+                        <div class="cv-title">Bachelor in Physics</div>
+                        <div class="cv-institute">Università degli Studi di Padova, Padua</div>
+                        <div class="cv-topic">Thesis Topic:  Propagation of radiation in strongly magnetized media </div>
+                        <a class="cv-button" href="files/Stimamiglio_Bachelor_Thesis.pdf" target="_blank">Download Bachelor Thesis (Italian Only)</a>
+                    </div>
+                    <div class="cv-year">Sep. 2020 - Sep. 2023</div>
+                </div>
+            </div>
+
+            <div class="cv-right">
+                <!-- Top Image -->
+                <img class="cv-image-top" src="images/mpa.jpg" alt="CV Image 1">
+
+                <!-- Download CV Button -->
+                <a class="cv-download-btn" href="files/Stimamiglio_Giovanni_CV.pdf" target="_blank">
+                    <!-- Replace SVG with your paper plane -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                    </svg>
+                    <span>Download Full CV</span>
+                </a>
+
+                <!-- Bottom Image -->
+                <img class="cv-image-bottom" src="images/Bachelor_graduation.webp" alt="CV Image 2">
+            </div>
+
         </div>
     </section>
 
-    <!-- MORE ABOUT ME -->
-    <section id="more">
-        <div class="section-content">
-            <h2>More About Me</h2>
-            <p>
-                Personal interests, hobbies, photos, etc.
-            </p>
+
+
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+        <div class="pub-container">
+            <h2>Publications</h2>
+
+            <!-- GRID WRAPPER (REQUIRED) -->
+            <div class="pub-grid">
+
+                <!-- LEFT COLUMN: WIP -->
+                <div class="pub-left">
+                    <img src="images/WIP.webp" alt="Work in progress">
+                </div>
+
+                <!-- RIGHT COLUMN: POSTERS -->
+                <div class="pub-right">
+                    <div class="pub-divider">
+                        In the meantime, why don't you check out my posters?
+                    </div>
+
+                    <div class="posters horizontal">
+                        <a href="files/poster1.pdf" target="_blank">
+                            <img src="images/poster1.jpg" alt="Poster 1 preview">
+                        </a>
+
+                        <a href="files/poster2.pdf" target="_blank">
+                            <img src="images/poster2.jpg" alt="Poster 2 preview">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
+
+
+
+    <!-- CONTACT --->
+    <section id="contacts">
+        <div class="section-content">
+            <h2>Contacts</h2>
+            <div class="contact-item">
+                <img src="images/email.svg" alt="Email" class="contact-icon">
+                <a href="mailto:gstimamiglio@mpa-garching.mpg.de">gstimamiglio@mpa-garching.mpg.de</a>
+            </div>
+
+            <div class="contact-item">
+                <img src="images/github.svg" alt="GitHub" class="contact-icon">
+                <a href="https://github.com/giostimamiglio" target="_blank">github.com/giostimamiglio</a>
+            </div>
+
+        </div>
+    </section>
+
+   <!-- ================= MORE ABOUT ME ================= -->
+    <section id="more">
+
+        <div class="more-container">
+
+            <h2 class="more-section-title">More About Me</h2>
+
+            <!-- Row 1 -->
+            <div class="more-row row1">
+                <div class="more-image carousel">
+
+                    <button class="carousel-arrow left" aria-label="Previous image">‹</button>
+
+                    <div class="carousel-viewport">
+
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="images/carousel/aurora.webp" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/cortina.webp" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/godafoss.jpg" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/gran_teton.webp" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/grand_canyon.webp" loading="lazy" alt="" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/maldives.webp" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/pisa.webp" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/athens.jpg" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/nyc.jpg" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/oman.jpg" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/carousel/sevilla.jpg" alt="" loading="lazy" style="width: 300px; height: auto;">
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                    <button class="carousel-arrow right" aria-label="Next image">›</button>
+
+                </div>
+
+                <div class="more-text">
+                    <p>
+                        Outside Astrophysics, I really like ancient literature and mithology, especially ancient greek and latin ones 
+                        and I also love reading. 
+                    </p>
+                    <p>
+                        I play the guitar as a self-taught and I really enjoy music: my favorite genres are rock,
+                        pop-rock, rap and blues and my favorite artists are John Mayer, JP Saxe, Eminem and Guns N' Roses.
+            
+                    </p>
+                    <p>
+                        I also love travelling (on the right a carousel with some of the most stunning places I've been to), discovering
+                        new places and going back to the ones I loved. 
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row 2: Skiing / Hiking -->
+            <div class="more-row row2">
+                <div class="more-image dual-images">
+                    <img src="images/hike.webp" alt="Hiking" id="hike-image" style="width: 250px; height: auto;">
+                    <img src="images/ski.jpg" alt="Skiing" id="ski-image" style="width: 250px; height: auto;">
+                </div>
+                <div class="more-text">
+                    <p>
+                        When I'm not working, there is a good chance you'll find me in the mountains. Since I was 
+                        little, I've always loved the quiet of snowy landscapes and the peace of green, grassy fields.
+                        In winter, I love skiing and the adrenaline of carving some curves on the slopes, while in 
+                        summer I trade skis for boots to go hiking. As a t-shirt I was gifted says "I drop 
+                        everything and move to Cortina" (which neatly sums up my retirement plans).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row 3: F1 -->
+            <div class="more-row row3">
+                <div class="more-image">
+                    <img src="images/f1_image.webp" alt="F1 Racing" id="f1-image" style="width: 200px; height: auto;">
+                    <button id="f1-info-btn" title="How to unlock minigame">🏁</button>
+                </div>
+                <div class="more-text">
+                    <p>
+                        Last but not least, I really enjoy Formula 1 and I am a huge Ferrari fan, just in case the photo 
+                        on the right (in which I am trying their simulator in Maranello) didn't give me away. 
+                        
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Overlay for animations -->
+        <div id="easter-overlay"></div>
+    </section>
+
+
+
+    <!-- LEGAL -->
+    <footer id="legal">
+        <div class="legal-content">
+            <p>
+                © <span id="year"></span> Giovanni Stimamiglio ·
+                Hosted on GitHub Pages
+            </p>
+
+            <p>
+                Built with ❤️ by me (when I definitely didn't have other work to do) 
+            </p>
+
+            <p class="legal-small">
+                Images © Giovanni Stimamiglio.
+            </p>
+        </div>
+    </footer>
+
 
     <!-- JS -->
     <script src="js/script.js"></script>
