@@ -1237,6 +1237,16 @@ body.dark #contacts {
     .hero-rocket {
         display: none; /* hide rocket on mobile */
     }
+     /* ---------- ABOUT / CV / MORE ---------- */
+
+    #about,
+    #cv,
+    #publications,
+    #contacts,
+    #more {
+        padding-left: 2rem; /* remove timeline offset */
+        padding-right: 2rem;
+    }
 
     /* ---------- CV ---------- */
     .cv-container {
@@ -1336,6 +1346,10 @@ body.dark #contacts {
     .contact-item {
         flex-direction: row;
         justify-content: flex-start;
+    }
+
+    #timeline {
+        display:none;
     }
 
 }
