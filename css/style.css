@@ -984,7 +984,7 @@ body.dark #contacts {
 }
 
 #more p {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 /* ROWS */
@@ -1078,7 +1078,7 @@ body.dark #contacts {
 }
 
 .more-text p {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.6;
 }
 
