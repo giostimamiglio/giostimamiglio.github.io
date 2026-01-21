@@ -1186,30 +1186,41 @@ body.dark #contacts {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* ================= MOBILE STABILITY & RESPONSIVENESS FIXES ================= */
-
+/* ================= MOBILE & TABLET FIXES ================= */
 @media (max-width: 900px) {
+
+    /* ---------- GLOBAL SECTION BEHAVIOR ---------- */
+
+    section {
+        height: auto;          /* allow content to grow */
+        min-height: 100vh;     /* keeps full-section feel */
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
 
     /* ---------- HERO SECTION ---------- */
 
     #hero {
-        min-height: 100vh;
-        overflow: hidden; /* prevent rocket/image bleed */
+        overflow: hidden;
     }
 
     .hero-content {
-        grid-template-columns: 1fr; /* single column */
-        gap: 2rem;
-        padding-top: 4rem;
+        display: flex;              /* override desktop grid */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem;
+        min-height: auto;
     }
 
     .hero-text {
         transform: none;
+        max-width: 100%;
     }
 
     .hero-text h1 {
-        font-size: 2.6rem;
+        font-size: 2.5rem;
     }
 
     .hero-text p {
@@ -1217,15 +1228,14 @@ body.dark #contacts {
         margin: 0 auto;
     }
 
-    /* Stack hero images BELOW text */
+    /* HERO IMAGES → STACK BELOW TEXT */
     .hero-images {
         position: static;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.2rem;
-        height: auto;
-        margin-top: 1rem;
+        gap: 1.4rem;
+        width: 100%;
     }
 
     .hero-img-card {
@@ -1233,69 +1243,95 @@ body.dark #contacts {
     }
 
     .hero-img-card img {
-        max-width: 220px;
         width: 100%;
+        max-width: 260px;
         height: auto;
     }
 
-    /* ---------- HERO ROCKET FIX ---------- */
+    /* ---------- GENERIC CONTENT SECTIONS ---------- */
 
-    .hero-rocket {
-        display: none;
+    #about,
+    #cv,
+    #publications,
+    #contacts,
+    #more {
+        padding-left: 2rem;     /* remove timeline offset */
+        padding-right: 2rem;
+    }
+
+    /* ---------- ABOUT SECTION ---------- */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .about-image img {
+        max-width: 260px;
     }
 
     /* ---------- MORE SECTION ---------- */
 
-    #more {
-        padding-left: 2rem; /* remove timeline offset on mobile */
-    }
-
     .more-row {
         flex-direction: column !important;
         align-items: center;
-        gap: 1.2rem;
+        gap: 1.8rem;
     }
 
     .more-text {
         text-align: left;
     }
 
-    /* Stack dual images vertically */
+    /* Stack dual images */
     .dual-images {
         flex-direction: column;
         align-items: center;
     }
 
     .dual-images img {
-        max-width: 260px;
         width: 100%;
+        max-width: 260px;
     }
 
-    /* Center carousel cleanly */
+    /* Center carousel */
     .carousel {
         justify-content: center;
     }
 
     /* ---------- CV SECTION ---------- */
 
-    #cv {
-        padding-left: 2rem;
+    .cv-container {
+        flex-direction: column;
+        align-items: center;
     }
 
     .cv-item {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.4rem;
     }
 
     .cv-year {
         text-align: left;
         font-weight: 600;
-        margin-bottom: 0.2rem;
+    }
+
+    /* ---------- PUBLICATIONS ---------- */
+
+    .pub-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .pub-left {
+        transform: none;
+        justify-self: center;
     }
 
     /* ---------- TIMELINE ---------- */
 
     #timeline {
-        display: none; /* timeline OFF on mobile */
+        display: none;
     }
 }
