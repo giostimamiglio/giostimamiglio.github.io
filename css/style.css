@@ -1217,12 +1217,11 @@ body.dark #contacts {
     }
 
     .hero-images {
-        position: relative;
+        position: static !important;  /* remove any absolute offsets */
         display: flex;
-        flex-direction: column;
+        flex-direction: column !important;
+        align-items: center;
         gap: 1rem;
-        top: 0;
-        left: 0;
         width: 100%;
         height: auto;
     }
@@ -1237,15 +1236,16 @@ body.dark #contacts {
     .hero-rocket {
         display: none; /* hide rocket on mobile */
     }
-     /* ---------- ABOUT / CV / MORE ---------- */
 
+    /* ---------- ABOUT / CV / MORE ---------- */
     #about,
     #cv,
     #publications,
     #contacts,
     #more {
-        padding-left: 2rem; /* remove timeline offset */
-        padding-right: 2rem;
+        padding-left: 1.5rem;  /* no timeline offset on mobile */
+        padding-right: 1.5rem;
+        width: 100%;
     }
 
     /* ---------- CV ---------- */
@@ -1277,12 +1277,16 @@ body.dark #contacts {
     .more-container {
         padding: 2rem 1rem;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
-    /* Only stack dual images */
+    /* Stack dual images vertically */
     .more-row .dual-images {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .dual-images img {
@@ -1293,19 +1297,18 @@ body.dark #contacts {
     /* Center carousel inside its container */
     .more-row .carousel {
         justify-content: center;
+        width: 100%;
     }
 
-    /* Adjust individual more-row image/text ratios */
+    /* Make each row stack completely */
     .more-row.row1 .more-image,
     .more-row.row2 .more-image,
-    .more-row.row3 .more-image {
-        flex: 1 1 100%;
-    }
+    .more-row.row3 .more-image,
     .more-row.row1 .more-text,
     .more-row.row2 .more-text,
     .more-row.row3 .more-text {
         flex: 1 1 100%;
-        margin-top: 1rem;
+        margin-top: 0.75rem;
     }
 
     /* ---------- ABOUT ME ---------- */
@@ -1346,10 +1349,12 @@ body.dark #contacts {
     .contact-item {
         flex-direction: row;
         justify-content: flex-start;
+        flex-wrap: wrap;      /* ensure links stay within bounds */
+        gap: 0.5rem;          /* spacing between icon + link */
     }
 
     #timeline {
-        display:none;
+        display: none;
     }
 
 }
