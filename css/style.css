@@ -1187,8 +1187,8 @@ body.dark #contacts {
 }
 
 /* ================= MOBILE STABILITY & RESPONSIVENESS FIXES ================= */
-/* ================= MOBILE FIXES ================= */
-@media (max-width: 768px) {
+
+@media (max-width: 900px) {
 
     /* ---------- HERO SECTION ---------- */
 
@@ -1241,14 +1241,7 @@ body.dark #contacts {
     /* ---------- HERO ROCKET FIX ---------- */
 
     .hero-rocket {
-        position: relative;
-        display: inline-block;
-        margin-top: 0.5rem;
-    }
-
-    /* Prevent rocket from escaping hero */
-    #hero * {
-        overflow-anchor: none;
+        display: none;
     }
 
     /* ---------- MORE SECTION ---------- */
