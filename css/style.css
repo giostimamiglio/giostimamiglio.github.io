@@ -1187,112 +1187,122 @@ body.dark #contacts {
 }
 
 /* ================= MOBILE STABILITY & RESPONSIVENESS FIXES ================= */
-@media (max-width: 900px) {
+/* ================= MOBILE FIXES ================= */
+@media (max-width: 768px) {
 
-    /* ---- Disable opacity reveal (mobile browsers repaint badly) ---- */
-    section {
-        opacity: 1 !important;
-        transition: none !important;
-        height: auto !important;
-        min-height: unset !important;
+    /* ---------- HERO SECTION ---------- */
+
+    #hero {
+        min-height: 100vh;
+        overflow: hidden; /* prevent rocket/image bleed */
     }
 
-    section.active {
-        opacity: 1 !important;
+    .hero-content {
+        grid-template-columns: 1fr; /* single column */
+        gap: 2rem;
+        padding-top: 4rem;
+        text-align: center;
     }
 
-    /* ---- Remove fixed elements that cause layout thrashing ---- */
-    #timeline,
-    #rocket {
-        display: none !important;
+    .hero-text {
+        transform: none;
     }
 
-    /* ---- General layout padding fixes ---- */
-    #about,
-    #cv,
-    #publications,
-    #contacts,
-    #more {
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
-    }
-
-    /* ---- Stack grids & columns vertically ---- */
-    .about-grid,
-    .pub-grid,
-    .cv-container,
-    .more-row {
-        grid-template-columns: 1fr !important;
-        flex-direction: column !important;
-        gap: 1.5rem;
-    }
-
-    /* ---- Center images & media ---- */
-    .about-image img,
-    .pub-left img,
-    .cv-right img,
-    .more-image img {
-        margin: 0 auto;
-        max-width: 90vw;
-        height: auto;
-    }
-
-    /* ---- CV layout cleanup ---- */
-    .cv-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-    }
-
-    .cv-year {
-        text-align: left;
-        font-size: 0.95rem;
-        opacity: 0.85;
-    }
-
-    /* ---- Buttons stay readable and compact ---- */
-    .cv-button,
-    .cv-download-btn {
-        width: auto;
-        align-self: flex-start;
-    }
-
-    /* ---- Carousel stability on mobile ---- */
-    .carousel {
-        justify-content: center;
-    }
-
-    .carousel-viewport {
-        max-width: 90vw;
-    }
-
-    .carousel-track {
-        will-change: transform;
-    }
-
-    .carousel-slide img {
-        max-width: 90vw;
-        height: auto;
-    }
-
-    /* ---- Carousel arrows always visible & closer to image ---- */
-    .carousel-arrow {
-        opacity: 0.85;
-    }
-
-    /* ---- Reduce large hero text ---- */
     .hero-text h1 {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
     }
 
     .hero-text p {
         font-size: 1.1rem;
+        margin: 0 auto;
     }
 
-    /* ---- Disable hero image hover effects on touch devices ---- */
-    .hero-img-card:hover img,
-    .hero-img-card:hover .hero-img-overlay {
-        transform: none;
-        filter: none;
+    /* Stack hero images BELOW text */
+    .hero-images {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .hero-img-card {
+        position: static;
+    }
+
+    .hero-img-card img {
+        max-width: 220px;
+        width: 100%;
+        height: auto;
+    }
+
+    /* ---------- HERO ROCKET FIX ---------- */
+
+    .hero-rocket {
+        position: relative;
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    /* Prevent rocket from escaping hero */
+    #hero * {
+        overflow-anchor: none;
+    }
+
+    /* ---------- MORE SECTION ---------- */
+
+    #more {
+        padding-left: 2rem; /* remove timeline offset on mobile */
+    }
+
+    .more-row {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    .more-text {
+        text-align: left;
+    }
+
+    /* Stack dual images vertically */
+    .dual-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dual-images img {
+        max-width: 260px;
+        width: 100%;
+    }
+
+    /* Center carousel cleanly */
+    .carousel {
+        justify-content: center;
+    }
+
+    /* ---------- CV SECTION ---------- */
+
+    #cv {
+        padding-left: 2rem;
+    }
+
+    .cv-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cv-year {
+        text-align: left;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
+
+    /* ---------- TIMELINE ---------- */
+
+    #timeline {
+        display: none; /* timeline OFF on mobile */
     }
 }
